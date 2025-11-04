@@ -43,7 +43,7 @@ resource "aws_route_table" "private" {
   }
 
   tags = {
-    Name = "shadow-routes-rtb"
+    Name = "ghislaines-routes-rtb"
   }
   
 }

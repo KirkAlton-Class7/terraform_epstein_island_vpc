@@ -3,6 +3,7 @@
 resource "aws_subnet" "public_app_a" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.1.0/24"
+  availability_zone = "us-east-1a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -13,6 +14,7 @@ resource "aws_subnet" "public_app_a" {
 resource "aws_subnet" "public_app_b" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.2.0/24"
+  availability_zone = "us-east-1b"
   map_public_ip_on_launch = true
 
   tags = {
@@ -23,6 +25,7 @@ resource "aws_subnet" "public_app_b" {
 resource "aws_subnet" "public_app_c" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.3.0/24"
+  availability_zone = "us-east-1c"
   map_public_ip_on_launch = true
 
   tags = {
@@ -35,7 +38,7 @@ resource "aws_subnet" "public_app_c" {
 resource "aws_subnet" "private_app_a" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.11.0/24"
-
+  availability_zone = "us-east-1a"
   tags = {
     Name = "ghislaine-maxwell-private-a"
   }
@@ -44,7 +47,7 @@ resource "aws_subnet" "private_app_a" {
 resource "aws_subnet" "private_app_b" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.22.0/24"
-
+  availability_zone = "us-east-1b"
   tags = {
     Name = "ghislaine-maxwell-private-b"
   }
@@ -53,7 +56,7 @@ resource "aws_subnet" "private_app_b" {
 resource "aws_subnet" "private_app_c" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.33.0/24"
-
+  availability_zone = "us-east-1c"
   tags = {
     Name = "ghislaine-maxwell-private-c"
   }
@@ -64,7 +67,7 @@ resource "aws_subnet" "private_app_c" {
 resource "aws_subnet" "private_data_a" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.44.0/24"
-
+  availability_zone = "us-east-1a"
   tags = {
     Name = "island-party-vip-private-a"
   }
@@ -73,7 +76,7 @@ resource "aws_subnet" "private_data_a" {
 resource "aws_subnet" "private_data_b" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.55.0/24"
-
+  availability_zone = "us-east-1b"
   tags = {
     Name = "island-party-vip-private-b"
   }
@@ -82,7 +85,7 @@ resource "aws_subnet" "private_data_b" {
 resource "aws_subnet" "private_data_c" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.10.66.0/24"
-
+  availability_zone = "us-east-1c"
   tags = {
     Name = "island-party-vip-private-c"
   }
