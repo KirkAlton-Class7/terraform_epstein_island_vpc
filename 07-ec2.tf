@@ -42,7 +42,7 @@ resource "aws_instance" "bastion_host" {
     instance_type = "t3.micro"
     subnet_id     = aws_subnet.public_app_a.id
     vpc_security_group_ids = [aws_security_group.public_app.id]
-    #key_name = "osaka-key"  # Replace with your key pair name
+    #key_name = "terraform-key"  # Replace with your key pair name
     #associate_public_ip_address = true
 
   tags = {
@@ -56,7 +56,7 @@ resource "aws_instance" "public_client_a" {
     instance_type = "t3.micro"
     subnet_id     = aws_subnet.public_app_a.id
     vpc_security_group_ids = [aws_security_group.public_app.id]
-    #key_name = "osaka-key"  # Replace with your key pair name
+    #key_name = "terraform-key"  # Replace with your key pair name
     user_data = file("${path.module}/public_client_a_script.sh") # Custom script path for Public Client A
     #associate_public_ip_address = true
 
@@ -74,7 +74,7 @@ resource "aws_instance" "private_client_a" {
     instance_type = "t3.micro"
     subnet_id     = aws_subnet.private_app_a.id
     vpc_security_group_ids = [aws_security_group.private_app.id]
-    #key_name = "osaka-key"  # Replace with your key pair name
+    #key_name = "terraform-key"  # Replace with your key pair name
     user_data = file("${path.module}/private_client_a_script.sh") # Custom script path for Client A
 
   tags = {
@@ -90,7 +90,7 @@ resource "aws_instance" "private_client_b" {
     instance_type = "t3.micro"
     subnet_id     = aws_subnet.private_app_b.id
     vpc_security_group_ids = [aws_security_group.private_app.id]
-    #key_name = "osaka-key"  # Replace with your key pair name
+    #key_name = "terraform-key"  # Replace with your key pair name
     user_data = file("${path.module}/private_client_b_script.sh") # Custom script path for Client B
 
   tags = {
@@ -104,7 +104,7 @@ resource "aws_instance" "private_client_c" {
     instance_type = "t3.micro"
     subnet_id     = aws_subnet.private_app_c.id
     vpc_security_group_ids = [aws_security_group.private_app.id]
-    #key_name = "osaka-key"  # Replace with your key pair name
+    #key_name = "terraform-key"  # Replace with your key pair name
     user_data = file("${path.module}/private_client_c_script.sh") # Custom script path for Client C
 
   tags = {
