@@ -11,7 +11,7 @@ resource "aws_nat_gateway" "main" {
   subnet_id     = aws_subnet.public_app_c.id
 
   tags = {
-    Name = "main-nat-gw"
+    Name = "epstein-island-nat"
   }
   depends_on = [aws_internet_gateway.main]
 }

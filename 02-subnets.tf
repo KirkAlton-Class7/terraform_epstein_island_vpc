@@ -6,7 +6,7 @@ resource "aws_subnet" "public_app_a" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "public-app-subnet-a"
+    Name = "epstein-redacted-files-public-a"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "public_app_b" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "public-app-subnet-b"
+    Name = "epstein-redacted-files-public-b"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "public_app_c" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "public-app-subnet-c"
+    Name = "epstein-redacted-files-public-c"
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_subnet" "private_app_a" {
   cidr_block = "10.10.11.0/24"
 
   tags = {
-    Name = "private-app-subnet-a"
+    Name = "ghislaine-maxwell-private-a"
   }
 }
 
@@ -46,7 +46,7 @@ resource "aws_subnet" "private_app_b" {
   cidr_block = "10.10.22.0/24"
 
   tags = {
-    Name = "private-app-subnet-b"
+    Name = "ghislaine-maxwell-private-b"
   }
 }
 
@@ -55,7 +55,7 @@ resource "aws_subnet" "private_app_c" {
   cidr_block = "10.10.33.0/24"
 
   tags = {
-    Name = "private-subnet-c"
+    Name = "ghislaine-maxwell-private-c"
   }
 }
 
@@ -66,7 +66,7 @@ resource "aws_subnet" "private_data_a" {
   cidr_block = "10.10.44.0/24"
 
   tags = {
-    Name = "private-data-subnet-a"
+    Name = "island-party-vip-private-a"
   }
 }
 
@@ -75,7 +75,7 @@ resource "aws_subnet" "private_data_b" {
   cidr_block = "10.10.55.0/24"
 
   tags = {
-    Name = "private-data-subnet-b"
+    Name = "island-party-vip-private-b"
   }
 }
 
@@ -84,6 +84,6 @@ resource "aws_subnet" "private_data_c" {
   cidr_block = "10.10.66.0/24"
 
   tags = {
-    Name = "private-data-subnet-c"
+    Name = "island-party-vip-private-c"
   }
 }

@@ -46,7 +46,7 @@ resource "aws_instance" "bastion_host" {
     #associate_public_ip_address = true
 
   tags = {
-    Name = "Bastion-Host-Windows"
+    Name = "Ghislaine-Maxwell-Bastion"
   }
 }
 
@@ -61,7 +61,7 @@ resource "aws_instance" "public_client_a" {
     #associate_public_ip_address = true
 
   tags = {
-    Name = "Public-Client-A"
+    Name = "Public-Facade"
   }
 }
 

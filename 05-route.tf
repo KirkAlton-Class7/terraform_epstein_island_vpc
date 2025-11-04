@@ -9,7 +9,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "public-route-table"
+    Name = "public-routes-rtb"
   }
   
 }
@@ -43,7 +43,7 @@ resource "aws_route_table" "private" {
   }
 
   tags = {
-    Name = "private-route-table"
+    Name = "shadow-routes-rtb"
   }
   
 }
@@ -77,7 +77,7 @@ resource "aws_route_table" "local" {
   }
 
   tags = {
-    Name = "local-route-table"
+    Name = "black-book-local-rtb"
   }
   
 }

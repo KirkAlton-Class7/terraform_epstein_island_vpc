@@ -5,7 +5,7 @@ resource "aws_security_group" "public_app" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "public-application-sg"
+    Name = "propaganda-public-sg"
   }
 }
 
@@ -63,7 +63,7 @@ resource "aws_security_group" "private_app" {
  vpc_id      = aws_vpc.main.id
 
  tags = {
-   Name = "private-application-sg"
+   Name = "flight-logs-private-sg"
  }
 }
 
@@ -97,7 +97,7 @@ resource "aws_security_group" "private_data_redis" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "private-data-redis-sg"
+    Name = "black-book-data-sg"
   }
 }
 
@@ -117,7 +117,7 @@ resource "aws_security_group" "private_data_mysql" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "private-data-mysql-sg"
+    Name = "black-book-mysql-sg"
   }
 }
 
@@ -138,7 +138,7 @@ resource "aws_security_group" "private_data_postgresql" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "private-data-postgresql-sg"
+    Name = "black-book-postgresql-sg"
   }
 }
 
@@ -159,7 +159,7 @@ resource "aws_security_group" "private_data_oracle" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "private-data-oracle-sg"
+    Name = "black-book-oracle-sg"
   }
 }
 
@@ -179,7 +179,7 @@ resource "aws_security_group" "private_data_mssql" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "private-data-mssql-sg"
+    Name = "black-book-mssql-sg"
   }
 }
 
@@ -200,7 +200,7 @@ resource "aws_security_group" "private_data_mongodb" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "private-data-mongodb-sg"
+    Name = "black-book-mongodb-sg"
   }
 }
 
