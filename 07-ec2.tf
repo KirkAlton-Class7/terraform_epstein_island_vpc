@@ -2,11 +2,11 @@
 
 # Microsoft Windows Server 2025 AMI Data Source
 data "aws_ami" "microsoft_windows_server_2025" {
-    most_recent = true
+  most_recent = true
 
   filter {
     name   = "name"
-    values = ["Windows_Server-2025-English-Full-Base-2025*"]
+    values = ["Windows_Server-2025-English*"]
   }
 
   filter {
@@ -14,12 +14,12 @@ data "aws_ami" "microsoft_windows_server_2025" {
     values = ["hvm"]
   }
 
-    owners = ["801119661308"] # Microsoft Corporation
+  owners = ["801119661308"] # Microsoft Corporation
 }
 
 # Amazon Linux 2023 AMI Data Source
 data "aws_ami" "amazon_linux_2023" {
-    most_recent = true
+  most_recent = true
 
   filter {
     name   = "name"
@@ -31,20 +31,20 @@ data "aws_ami" "amazon_linux_2023" {
     values = ["hvm"]
   }
 
-    owners = ["137112412989"] # Amazon
+  owners = ["137112412989"] # Amazon
 }
 
 # Public App EC2 Clients
 
 # Bastion Host (Windows Server 2025)
 resource "aws_instance" "bastion_host" {
-    ami           = data.aws_ami.microsoft_windows_server_2025.id
-    instance_type = "t3.micro"
-    subnet_id     = aws_subnet.public_app_a.id
-    vpc_security_group_ids = [aws_security_group.public_app.id]
-    availability_zone = "us-east-1a"
-    #key_name = "terraform-key"  # Replace with your key pair name
-    associate_public_ip_address = true
+  ami                    = data.aws_ami.microsoft_windows_server_2025.id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.public_app_a.id
+  vpc_security_group_ids = [aws_security_group.public_app.id]
+  availability_zone      = "us-east-1a"
+  #key_name = "terraform-key"  # Replace with your key pair name
+  associate_public_ip_address = true
 
   tags = {
     Name = "Ghislaine-Maxwell-Bastion"
@@ -53,14 +53,14 @@ resource "aws_instance" "bastion_host" {
 
 # Public App EC2 Client (Amazon Linux 2023)
 resource "aws_instance" "public_client_a" {
-    ami           = data.aws_ami.amazon_linux_2023.id
-    instance_type = "t3.micro"
-    subnet_id     = aws_subnet.public_app_a.id
-    vpc_security_group_ids = [aws_security_group.public_app.id]
-    availability_zone = "us-east-1a"
-    #key_name = "terraform-key"  # Replace with your key pair name
-    user_data = file("${path.module}/public_client_a_script.sh") # Custom script path for Public Client A
-    #associate_public_ip_address = true
+  ami                    = data.aws_ami.amazon_linux_2023.id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.public_app_a.id
+  vpc_security_group_ids = [aws_security_group.public_app.id]
+  availability_zone      = "us-east-1a"
+  #key_name = "terraform-key"  # Replace with your key pair name
+  user_data = file("${path.module}/public_client_a_script.sh") # Custom script path for Public Client A
+  #associate_public_ip_address = true
 
   tags = {
     Name = "Public-Facade"
@@ -72,13 +72,13 @@ resource "aws_instance" "public_client_a" {
 
 # Private Client A
 resource "aws_instance" "private_client_a" {
-    ami           = data.aws_ami.amazon_linux_2023.id
-    instance_type = "t3.micro"
-    subnet_id     = aws_subnet.private_app_a.id
-    vpc_security_group_ids = [aws_security_group.private_app.id]
-    availability_zone = "us-east-1a"
-    #key_name = "terraform-key"  # Replace with your key pair name
-    user_data = file("${path.module}/private_client_a_script.sh") # Custom script path for Client A
+  ami                    = data.aws_ami.amazon_linux_2023.id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.private_app_a.id
+  vpc_security_group_ids = [aws_security_group.private_app.id]
+  availability_zone      = "us-east-1a"
+  #key_name = "terraform-key"  # Replace with your key pair name
+  user_data = file("${path.module}/private_client_a_script.sh") # Custom script path for Client A
 
   tags = {
     Name = "Private-Client-A"
@@ -89,13 +89,13 @@ resource "aws_instance" "private_client_a" {
 
 # Private Client B
 resource "aws_instance" "private_client_b" {
-    ami           = data.aws_ami.amazon_linux_2023.id
-    instance_type = "t3.micro"
-    subnet_id     = aws_subnet.private_app_b.id
-    vpc_security_group_ids = [aws_security_group.private_app.id]
-    availability_zone = "us-east-1b"
-    #key_name = "terraform-key"  # Replace with your key pair name
-    user_data = file("${path.module}/private_client_b_script.sh") # Custom script path for Client B
+  ami                    = data.aws_ami.amazon_linux_2023.id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.private_app_b.id
+  vpc_security_group_ids = [aws_security_group.private_app.id]
+  availability_zone      = "us-east-1b"
+  #key_name = "terraform-key"  # Replace with your key pair name
+  user_data = file("${path.module}/private_client_b_script.sh") # Custom script path for Client B
 
   tags = {
     Name = "Private-Client-B"
@@ -104,13 +104,13 @@ resource "aws_instance" "private_client_b" {
 
 # Private Client C
 resource "aws_instance" "private_client_c" {
-    ami           = data.aws_ami.amazon_linux_2023.id
-    instance_type = "t3.micro"
-    subnet_id     = aws_subnet.private_app_c.id
-    vpc_security_group_ids = [aws_security_group.private_app.id]
-    availability_zone = "us-east-1c"
-    #key_name = "terraform-key"  # Replace with your key pair name
-    user_data = file("${path.module}/private_client_c_script.sh") # Custom script path for Client C
+  ami                    = data.aws_ami.amazon_linux_2023.id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.private_app_c.id
+  vpc_security_group_ids = [aws_security_group.private_app.id]
+  availability_zone      = "us-east-1c"
+  #key_name = "terraform-key"  # Replace with your key pair name
+  user_data = file("${path.module}/private_client_c_script.sh") # Custom script path for Client C
 
   tags = {
     Name = "Private-Client-C"

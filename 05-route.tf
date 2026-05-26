@@ -11,7 +11,7 @@ resource "aws_route_table" "public" {
   tags = {
     Name = "public-routes-rtb"
   }
-  
+
 }
 
 # Public Route Table Associations
@@ -45,7 +45,7 @@ resource "aws_route_table" "private" {
   tags = {
     Name = "ghislaines-routes-rtb"
   }
-  
+
 }
 
 # Private Route Table Associations
@@ -79,7 +79,7 @@ resource "aws_route_table" "local" {
   tags = {
     Name = "black-book-local-rtb"
   }
-  
+
 }
 
 
